@@ -29,8 +29,8 @@ StringBuilderClass::StringBuilderClass()
 }
 void StringBuilderClass::Init()
 {
-    index = 0;
     memset((byte*)stringBuilderText, 0, SB_CAPACITY + 1);
+    index = 0;
 }
 void StringBuilderClass::AppendString(char* str)
 {
