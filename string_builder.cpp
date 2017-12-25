@@ -1,23 +1,20 @@
 #include "string_builder.h"
 
+char toStringText[TOSTR_CAPACITY + 1];
 
+StringConverterClass::StringConverterClass()
+{
+}
 void StringConverterClass::write(uint8_t a)
 {
     if (index < TOSTR_CAPACITY)
         toStringText[index++] = a;
 }
-
-StringConverterClass::StringConverterClass(char* _toStringText)
-{
-    toStringText = _toStringText;
-}
-
 void StringConverterClass::Init()
 {
     memset((byte*)toStringText, 0, TOSTR_CAPACITY + 1);
     index = 0;
 }
-
 char* StringConverterClass::GetText()
 {
     return toStringText;
@@ -25,11 +22,11 @@ char* StringConverterClass::GetText()
 
 
 
-StringBuilderClass::StringBuilderClass(char* _stringBuilderText)
-{
-    stringBuilderText = _stringBuilderText;
-}
+char stringBuilderText[SB_CAPACITY + 1];
 
+StringBuilderClass::StringBuilderClass()
+{
+}
 void StringBuilderClass::Init()
 {
     index = 0;
@@ -48,7 +45,6 @@ void StringBuilderClass::PadRight(char* paddingChar, byte n)
     for (byte i = 0; i < n; i++)
         AppendString(paddingChar);
 }
-
 char* StringBuilderClass::GetText()
 {
     return stringBuilderText;
