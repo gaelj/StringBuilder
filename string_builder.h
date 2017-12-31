@@ -27,7 +27,7 @@ public:
     StringBuilderClass();
     void Init();
     void AppendString(char* str);
-    void PadRight(char* paddingChar, byte n);
+    void PadRight(char* paddingChar, int n);
     char* GetText();
 
 private:

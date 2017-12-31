@@ -40,7 +40,7 @@ void StringBuilderClass::AppendString(char* str)
     strncat(stringBuilderText, str, len);
     index += len;
 }
-void StringBuilderClass::PadRight(char* paddingChar, byte n)
+void StringBuilderClass::PadRight(char* paddingChar, int n)
 {
     for (byte i = 0; i < n; i++)
         AppendString(paddingChar);
